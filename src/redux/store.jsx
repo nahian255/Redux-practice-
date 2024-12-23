@@ -4,11 +4,13 @@ import { realApi } from './features/dataFacth/realApi';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { cartApi } from './features/dataFacth/CartApi';
 import cartReducer from '../redux/features/cartSlice/cartSlice'
+import userReducer from './features/users/usersSlice'
 
 export const store = configureStore({
     reducer: {
         counter: counterReducer,
-        cart:cartReducer,
+        cart: cartReducer,
+        users: userReducer,
         [realApi.reducerPath]: realApi.reducer,
         [cartApi.reducerPath]: cartApi.reducer
     },

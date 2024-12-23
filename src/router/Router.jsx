@@ -6,6 +6,7 @@ import { HomeOne } from '../components/HomeOne';
 import { Card } from '../components/Card';
 import { CartStore } from '../components/CartStore';
 import { CartDetails } from '../components/CartDetails';
+import UsersPage from '../components/otherProject/UsersPage';
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
                 path:'/cards-details/:id',
                 element:<CartDetails></CartDetails>
             },
+            {
+                path:'/users',
+                element:<UsersPage></UsersPage>
+            }
         ]
 
     }

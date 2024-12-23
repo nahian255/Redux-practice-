@@ -10,6 +10,10 @@ export const Card = () => {
     const { data: carts, isLoading, error } = useGetCartDataQuery();
     const dispatch = useDispatch(); // Use Redux dispatch
 
+    
+    const addToCartHandeles = (cart)=>{
+        dispatch(addToCart(cart))
+    }
 
     if (isLoading) return <p>Loading...</p>;
     if (error) return <p>Something went worng.</p>;
@@ -38,7 +42,7 @@ export const Card = () => {
                             </Link>
 
                             <Button
-                                onClick={() => dispatch(addToCart(cart))} // Dispatch the action
+                                onClick={() => addToCartHandeles(cart)} // Dispatch the action
                                 className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none hover:bg-gray-600">
                                 Add to Cart
                             </Button>
