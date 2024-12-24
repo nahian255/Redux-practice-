@@ -7,6 +7,7 @@ import { Card } from '../components/Card';
 import { CartStore } from '../components/CartStore';
 import { CartDetails } from '../components/CartDetails';
 import UsersPage from '../components/otherProject/UsersPage';
+import { ExpenseTracker } from '../components/curdOperation/ExpenseTracker';
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path:'/users',
                 element:<UsersPage></UsersPage>
+            },
+            {
+                path:'/expense-tracker',
+                element:<ExpenseTracker/>
             }
         ]
 

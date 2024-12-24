@@ -2,9 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     nickName: 'aaaaaa',
-    usersArray: [
-
-    ]
+    usersArray: []
 }
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
     const respons = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -31,7 +29,7 @@ const userSlice = createSlice({
             })
             .addCase(fetchUsers.fulfilled, (state, action) => {
                 state.loading = false;
-                console.log(action,'from addcase')
+                console.log(action, 'from addcase')
                 state.usersArray = action.payload; // Update the usersArray with fetched data
             })
             .addCase(fetchUsers.rejected, (state, action) => {

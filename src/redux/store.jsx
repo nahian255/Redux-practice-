@@ -5,12 +5,17 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 import { cartApi } from './features/dataFacth/CartApi';
 import cartReducer from '../redux/features/cartSlice/cartSlice'
 import userReducer from './features/users/usersSlice'
+import expenseReducer from './features/expenseTracker/expenseSlice'
+
 
 export const store = configureStore({
     reducer: {
         counter: counterReducer,
         cart: cartReducer,
         users: userReducer,
+        expense: expenseReducer,
+
+
         [realApi.reducerPath]: realApi.reducer,
         [cartApi.reducerPath]: cartApi.reducer
     },
